@@ -71,18 +71,22 @@ pip install psutil customtkinter pillow pystray requests
 
 ### Installation Steps
 
-1. **Download the program:**
-   ```bash
-   git clone https://github.com/orbiacc/Mathca-Memory-Monitor.git
-   cd Mathca-Memory-Monitor
-   ```
+#### Method 1: Direct Download (Recommended)
+
+1. **Download the program file:**
+   - Go to: https://github.com/orbiacc/Mathca-Memory-Monitor/blob/main/memory_monitor.pyw
+   - Click the **"Download raw file"** button (↓ icon on top right)
+   - Or right-click on "Raw" and select "Save link as..."
+   - Save as `memory_monitor.pyw`
 
 2. **Install dependencies:**
    ```bash
-   pip install -r requirements.txt
+   pip install psutil customtkinter pillow pystray requests
    ```
 
 3. **Run the program:**
+   - Double-click `memory_monitor.pyw`
+   - Or via command line:
    ```bash
    pythonw memory_monitor.pyw
    ```
@@ -92,6 +96,24 @@ pip install psutil customtkinter pillow pystray requests
    - Program automatically adds itself to Windows startup
    - Downloads default English language file
    - Creates config file in `%USERPROFILE%\app_memory_monitor_config.json`
+
+#### Method 2: Git Clone
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/orbiacc/Mathca-Memory-Monitor.git
+   cd Mathca-Memory-Monitor
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   pip install psutil customtkinter pillow pystray requests
+   ```
+
+3. **Run the program:**
+   ```bash
+   pythonw memory_monitor.pyw
+   ```
 
 ---
 
@@ -584,4 +606,4 @@ MIT License - Feel free to modify and distribute
 
 **Made with ❤️ for efficient memory management**
 
-*Last Updated: January 2025*
+*Last Updated: January 2026*
