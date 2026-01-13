@@ -47,4 +47,6 @@
   "language_desc": "Selecionar idioma da interface",
   "restart_loop_blocked_title": "Inicialização automática interrompida",
   "restart_loop_blocked_msg": "⚠️ LOOP INFINITO EVITADO\n\napp.exe reiniciou {count} vezes em {cooldown} segundos.\n\nO limite de RAM ({limit} MB) é muito baixo\n\n✅ Solução:\n• Aumentar o limite de RAM\n• Ou iniciar manualmente"
+  "theme_setting": "Tema",
+  "theme_desc": "Escolha seu tema de cores favorito. O programa será reiniciado após alterar o tema."
 }
