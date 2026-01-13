@@ -4,12 +4,6 @@
 #However, since the “matcha” issue hasn't been resolved for me, this works. The backend doesn't consume too much memory, or so it seems.
 #https://discord.gg/BJwSQzGRwH
 #I'm sharing this on the script channel because there's nowhere else to share it. If you agree that it's not a virus, you can use it. OPEN SOURCE!
-#This code is open source. If you want to improve it and share it, please share it as open source and give me credit.
-#It's 3:10 a.m. in my country right now, and I'm dealing with this, bruhhh
-#I don't know if this will be useful o_O
-#However, since the “matcha” issue hasn't been resolved for me, this works. The backend doesn't consume too much memory, or so it seems.
-#https://discord.gg/BJwSQzGRwH
-#I'm sharing this on the script channel because there's nowhere else to share it. If you agree that it's not a virus, you can use it. OPEN SOURCE!
 import psutil
 import time
 import os
@@ -38,6 +32,9 @@ GITHUB_LANGUAGES_URL = "https://raw.githubusercontent.com/orbiacc/Mathca-Memory-
 
 mutex_handle = None
 CURRENT_LANG = {}
+CURRENT_THEME = {}
+THEMES_DIR = os.path.join(os.path.expanduser("~"), ".app_memory_monitor", "themes")
+GITHUB_THEMES_URL = "https://raw.githubusercontent.com/orbiacc/Mathca-Memory-Monitor/main/themes/"
 
 def release_mutex():
     global mutex_handle
@@ -117,6 +114,8 @@ def load_language(lang_code):
     
     lang_file = os.path.join(LANGUAGES_DIR, f"{lang_code}.json")
     
+    download_language_file(lang_code)
+    
     if os.path.exists(lang_file):
         try:
             with open(lang_file, 'r', encoding='utf-8') as f:
@@ -167,6 +166,84 @@ def load_language(lang_code):
         "hide": "Hide"
     }
     return False
+
+def download_theme_file(theme_name):
+    try:
+        os.makedirs(THEMES_DIR, exist_ok=True)
+        url = f"{GITHUB_THEMES_URL}{theme_name}.json"
+        response = requests.get(url, timeout=10)
+        
+        if response.status_code == 200:
+            theme_file = os.path.join(THEMES_DIR, f"{theme_name}.json")
+            with open(theme_file, 'w', encoding='utf-8') as f:
+                f.write(response.text)
+            return True
+        return False
+    except Exception as e:
+        return False
+
+def load_theme(theme_name):
+    global CURRENT_THEME
+    
+    theme_file = os.path.join(THEMES_DIR, f"{theme_name}.json")
+    
+    if os.path.exists(theme_file):
+        try:
+            with open(theme_file, 'r', encoding='utf-8') as f:
+                CURRENT_THEME = json.load(f)
+            return True
+        except:
+            pass
+    
+    if download_theme_file(theme_name):
+        try:
+            with open(theme_file, 'r', encoding='utf-8') as f:
+                CURRENT_THEME = json.load(f)
+            return True
+        except:
+            pass
+    
+    CURRENT_THEME = {
+        "name": "Dark",
+        "mode": "dark",
+        "colors": {
+            "bg_primary": "#0f172a",
+            "bg_secondary": "#1f2937",
+            "bg_tertiary": "#374151",
+            "text_primary": "#ffffff",
+            "text_secondary": "#9ca3af",
+            "accent_green": "#10b981",
+            "accent_yellow": "#f59e0b",
+            "accent_red": "#ef4444",
+            "accent_blue": "#3b82f6",
+            "accent_purple": "#8b5cf6",
+            "button_hover": "#059669",
+            "progress_bg": "#374151"
+        }
+    }
+    return False
+
+def get_available_themes():
+    try:
+        url = "https://api.github.com/repos/orbiacc/Mathca-Memory-Monitor/contents/themes"
+        response = requests.get(url, timeout=10)
+        
+        if response.status_code == 200:
+            files = response.json()
+            themes = []
+            
+            for file in files:
+                if file['name'].endswith('.json'):
+                    theme_name = file['name'].replace('.json', '')
+                    themes.append(theme_name)
+            return themes if themes else ["dark", "light"]
+        return ["dark", "light"]
+    except Exception as e:
+        return ["dark", "light"]
+
+def tc(color_key):
+    """Theme Color - Tema rengini döndür"""
+    return CURRENT_THEME.get("colors", {}).get(color_key, "#1f2937")
 
 def t(key):
     return CURRENT_LANG.get(key, key)
@@ -244,11 +321,15 @@ class MemoryMonitor:
             "max_memory_mb": 4096,
             "update_interval": 1,
             "auto_restart": True,
-            "language": "en"
+            "language": "en",
+            "theme": "dark"
         }
         
         self.load_config()
         load_language(self.language)
+        load_theme(self.theme)
+        
+        ctk.set_appearance_mode(CURRENT_THEME.get("mode", "dark"))
         
         self.current_memory = 0
         self.process_running = False
@@ -277,6 +358,8 @@ class MemoryMonitor:
             import subprocess
             script_path = os.path.abspath(sys.argv[0])
             current_pid = os.getpid()
+            
+            self.save_config()
             
             pid_file = os.path.join(os.environ['TEMP'], 'memory_monitor_old_pid.txt')
             with open(pid_file, 'w') as f:
@@ -344,17 +427,20 @@ class MemoryMonitor:
                     self.update_interval = config.get('update_interval', self.default_config['update_interval'])
                     self.auto_restart = config.get('auto_restart', self.default_config['auto_restart'])
                     self.language = config.get('language', self.default_config['language'])
+                    self.theme = config.get('theme', self.default_config['theme'])
             else:
                 self.max_memory_mb = self.default_config['max_memory_mb']
                 self.update_interval = self.default_config['update_interval']
                 self.auto_restart = self.default_config['auto_restart']
                 self.language = self.default_config['language']
+                self.theme = self.default_config['theme']
                 self.save_config()
         except:
             self.max_memory_mb = self.default_config['max_memory_mb']
             self.update_interval = self.default_config['update_interval']
             self.auto_restart = self.default_config['auto_restart']
             self.language = self.default_config['language']
+            self.theme = self.default_config['theme']
     
     def save_config(self):
         try:
@@ -362,7 +448,8 @@ class MemoryMonitor:
                 'max_memory_mb': self.max_memory_mb,
                 'update_interval': self.update_interval,
                 'auto_restart': self.auto_restart,
-                'language': self.language
+                'language': self.language,
+                'theme': self.theme
             }
             with open(CONFIG_FILE, 'w', encoding='utf-8') as f:
                 json.dump(config, f, indent=4)
@@ -640,13 +727,13 @@ class MemoryMonitor:
         main = ctk.CTkScrollableFrame(self.config_window, fg_color="transparent")
         main.pack(fill="both", expand=True, padx=20, pady=20)
         
-        header = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=15)
+        header = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=15)
         header.pack(fill="x", pady=(5, 15))
         
         ctk.CTkLabel(header, text="⚙️", font=ctk.CTkFont(size=40)).pack(pady=(20, 5))
         ctk.CTkLabel(header, text=t('configuration'), font=ctk.CTkFont(size=22, weight="bold")).pack(pady=(0, 20))
         
-        limit_card = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=12)
+        limit_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
         limit_card.pack(fill="x", pady=10)
         
         limit_inner = ctk.CTkFrame(limit_card, fg_color="transparent")
@@ -676,7 +763,7 @@ class MemoryMonitor:
         
         limit_entry.bind("<KeyRelease>", update_gb)
         
-        interval_card = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=12)
+        interval_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
         interval_card.pack(fill="x", pady=10)
         
         interval_inner = ctk.CTkFrame(interval_card, fg_color="transparent")
@@ -784,6 +871,12 @@ class MemoryMonitor:
         ).pack(pady=8)
     
     def show_settings(self):
+        global CURRENT_LANG, CURRENT_THEME
+        CURRENT_LANG = {}
+        CURRENT_THEME = {}
+        load_language(self.language)
+        load_theme(self.theme)
+        
         try:
             if self.settings_window and self.settings_window.winfo_exists():
                 self.settings_window.attributes('-topmost', True)
@@ -808,7 +901,7 @@ class MemoryMonitor:
         container = ctk.CTkFrame(self.settings_window, fg_color="transparent")
         container.pack(fill="both", expand=True, padx=25, pady=25)
         
-        header = ctk.CTkFrame(container, fg_color="#1f2937", corner_radius=15)
+        header = ctk.CTkFrame(container, fg_color=tc("bg_secondary"), corner_radius=15)
         header.pack(fill="x", pady=(0, 15))
         
         ctk.CTkLabel(header, text="🚀", font=ctk.CTkFont(size=40)).pack(pady=(20, 5))
@@ -817,7 +910,7 @@ class MemoryMonitor:
         main = ctk.CTkScrollableFrame(container, fg_color="transparent")
         main.pack(fill="both", expand=True, pady=(0, 10))
         
-        lang_card = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=12)
+        lang_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
         lang_card.pack(fill="x", pady=10)
         
         lang_inner = ctk.CTkFrame(lang_card, fg_color="transparent")
@@ -878,6 +971,8 @@ class MemoryMonitor:
                     self.language = code
                     self.save_config()
                     
+                    load_language(code)
+                    
                     ctypes.windll.user32.MessageBoxW(
                         0,
                         f"Language changed to {name}\n\nProgram will restart completely.",
@@ -889,8 +984,78 @@ class MemoryMonitor:
                     break
         
         lang_dropdown.configure(command=change_language)
+
+        theme_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
+        theme_card.pack(fill="x", pady=10)
         
-        restart_card = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=12)
+        theme_inner = ctk.CTkFrame(theme_card, fg_color="transparent")
+        theme_inner.pack(fill="x", padx=20, pady=20)
+        
+        theme_info = ctk.CTkFrame(theme_inner, fg_color="transparent")
+        theme_info.pack(fill="x", pady=(0, 12))
+        
+        ctk.CTkLabel(theme_info, text=f"🎨 {t('theme_setting')}", font=ctk.CTkFont(size=14, weight="bold"), anchor="w").pack(side="left")
+        
+        ctk.CTkLabel(theme_inner, text=t('theme_desc'), font=ctk.CTkFont(size=11), text_color="#6b7280", wraplength=350, justify="left").pack(pady=(0, 12), anchor="w")
+        
+        available_themes = get_available_themes()
+        theme_names = {         #Perhaps a translation could be added to this section later    
+            "dark": "🌙 Dark",
+            "light": "☀️ Light",
+            "blue": "💙 Blue",
+            "purple": "💜 Purple",
+            "green": "💚 Green",
+            "red": "❤️ Red",
+            "dracula": "🧛 Dracula",
+            "nord": "❄️ Nord",
+            "monokai": "🎨 Monokai",
+            "solarized": "🌅 Solarized",
+            "gruvbox": "🟤 Gruvbox",
+            "tokyo": "🗼 Tokyo Night",
+            "catppuccin": "🐱 Catppuccin",
+            "onedark": "⚫ One Dark",
+            "material": "📱 Material",
+            "ayu": "🌊 Ayu",
+            "everforest": "🌲 Everforest"
+        }
+        
+        theme_dropdown = ctk.CTkOptionMenu(
+            theme_inner,
+            values=[theme_names.get(t, t) for t in available_themes],
+            width=380,
+            height=40,
+            font=ctk.CTkFont(size=14, weight="bold"),
+            fg_color=tc("accent_purple"),
+            button_color="#7c3aed",
+            button_hover_color="#6d28d9"
+        )
+        
+        current_theme_name = theme_names.get(self.theme, self.theme)
+        theme_dropdown.set(current_theme_name)
+        theme_dropdown.pack()
+        
+        def change_theme(choice):
+            for code, name in theme_names.items():
+                if name == choice:
+                    if code == self.theme:
+                        return
+                    
+                    self.theme = code
+                    self.save_config()
+                    
+                    ctypes.windll.user32.MessageBoxW( #or to these sections
+                        0,
+                        f"Theme changed to {name}\n\nProgram will restart to apply theme.",
+                        "Theme Changed - Restarting",
+                        0x40
+                    )
+                    
+                    self.restart_program()
+                    break
+        
+        theme_dropdown.configure(command=change_theme)
+        
+        restart_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
         restart_card.pack(fill="x", pady=10)
         
         restart_inner = ctk.CTkFrame(restart_card, fg_color="transparent")
@@ -921,7 +1086,7 @@ class MemoryMonitor:
         )
         restart_btn.pack()
         
-        startup_card = ctk.CTkFrame(main, fg_color="#1f2937", corner_radius=12)
+        startup_card = ctk.CTkFrame(main, fg_color=tc("bg_secondary"), corner_radius=12)
         startup_card.pack(fill="x", pady=10)
         
         startup_inner = ctk.CTkFrame(startup_card, fg_color="transparent")
@@ -1010,12 +1175,12 @@ class MemoryMonitor:
         main_frame = ctk.CTkFrame(self.window, fg_color="transparent")
         main_frame.pack(fill="both", expand=True, padx=25, pady=25)
         
-        header = ctk.CTkFrame(main_frame, fg_color="#1f2937", corner_radius=15)
+        header = ctk.CTkFrame(main_frame, fg_color=tc("bg_secondary"), corner_radius=15)
         header.pack(fill="x", pady=(0, 20))
         
         ctk.CTkLabel(header, text=t('memory_monitor'), font=ctk.CTkFont(size=28, weight="bold")).pack(pady=25)
         
-        status_frame = ctk.CTkFrame(main_frame, fg_color="#1f2937", corner_radius=12)
+        status_frame = ctk.CTkFrame(main_frame, fg_color=tc("bg_secondary"), corner_radius=12)
         status_frame.pack(fill="x", pady=10)
         
         status_inner = ctk.CTkFrame(status_frame, fg_color="transparent")
@@ -1026,7 +1191,7 @@ class MemoryMonitor:
         self.status_label = ctk.CTkLabel(status_inner, text=f"⚪ {t('not_running')}", font=ctk.CTkFont(size=15, weight="bold"), text_color="#6b7280", anchor="e")
         self.status_label.pack(side="right")
         
-        memory_frame = ctk.CTkFrame(main_frame, fg_color="#1f2937", corner_radius=12)
+        memory_frame = ctk.CTkFrame(main_frame, fg_color=tc("bg_secondary"), corner_radius=12)
         memory_frame.pack(fill="x", pady=10)
         
         memory_inner = ctk.CTkFrame(memory_frame, fg_color="transparent")
@@ -1095,7 +1260,7 @@ class MemoryMonitor:
             corner_radius=10
         ).pack(pady=5)
         
-        info_frame = ctk.CTkFrame(main_frame, fg_color="#1f2937", corner_radius=8)
+        info_frame = ctk.CTkFrame(main_frame, fg_color=tc("bg_secondary"), corner_radius=8)
         info_frame.pack(fill="x", pady=(10, 0))
         
         self.interval_info_label = ctk.CTkLabel(info_frame, text=f"{t('update_interval')}: {self.update_interval}s • {self.process_name}", font=ctk.CTkFont(size=11), text_color="#9ca3af")
