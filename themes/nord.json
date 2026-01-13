@@ -1,0 +1,18 @@
+{
+  "name": "Nord",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#2e3440",
+    "bg_secondary": "#3b4252",
+    "bg_tertiary": "#434c5e",
+    "text_primary": "#eceff4",
+    "text_secondary": "#d8dee9",
+    "accent_green": "#a3be8c",
+    "accent_yellow": "#ebcb8b",
+    "accent_red": "#bf616a",
+    "accent_blue": "#88c0d0",
+    "accent_purple": "#b48ead",
+    "button_hover": "#8fbcbb",
+    "progress_bg": "#434c5e"
+  }
+}
