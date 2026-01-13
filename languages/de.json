@@ -46,7 +46,7 @@
   "language_setting": "Sprache",
   "language_desc": "Oberflächensprache auswählen",
   "restart_loop_blocked_title": "Autostart gestoppt",
-  "restart_loop_blocked_msg": "⚠️ ENDLOSSCHLEIFE VERHINDERT!\n\napp.exe wurde {count} Mal in den letzten {cooldown} Sekunden neu gestartet.\n\nRAM-Limit ({limit} MB) ist zu niedrig!\n\n✅ Lösung:\n• RAM-Limit erhöhen\n• Oder Programm manuell starten"
+  "restart_loop_blocked_msg": ",⚠️ ENDLOSSCHLEIFE VERHINDERT!\n\napp.exe wurde {count} Mal in den letzten {cooldown} Sekunden neu gestartet.\n\nRAM-Limit ({limit} MB) ist zu niedrig!\n\n✅ Lösung:\n• RAM-Limit erhöhen\n• Oder Programm manuell starten"
   "theme_setting": "Design",
   "theme_desc": "Wählen Sie Ihr bevorzugtes Farbschema. Das Programm wird nach der Designänderung neu gestartet."
 }

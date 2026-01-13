@@ -46,7 +46,7 @@
   "language_setting": "Språk",
   "language_desc": "Välj gränssnittsspråk",
   "restart_loop_blocked_title": "Automatisk start stoppad",
-  "restart_loop_blocked_msg": "⚠️ OÄNDLIG LOOP FÖRHINDRAD\n\napp.exe startades om {count} gånger på {cooldown} sekunder.\n\nRAM-gränsen ({limit} MB) är för låg\n\n✅ Lösning:\n• Öka RAM-gränsen\n• Eller starta manuellt"
+  "restart_loop_blocked_msg": ",⚠️ OÄNDLIG LOOP FÖRHINDRAD\n\napp.exe startades om {count} gånger på {cooldown} sekunder.\n\nRAM-gränsen ({limit} MB) är för låg\n\n✅ Lösning:\n• Öka RAM-gränsen\n• Eller starta manuellt"
   "theme_setting": "Tema",
   "theme_desc": "Välj ditt favoritfärgtema. Programmet kommer att startas om efter att ha ändrat temat."
 }

@@ -46,7 +46,7 @@
   "language_setting": "Idioma",
   "language_desc": "Seleccionar idioma de la interfaz",
   "restart_loop_blocked_title": "Inicio automático detenido",
-  "restart_loop_blocked_msg": "⚠️ BUCLE INFINITO PREVENIDO\n\napp.exe se reinició {count} veces en {cooldown} segundos.\n\nEl límite de RAM ({limit} MB) es demasiado bajo\n\n✅ Solución:\n• Aumentar el límite de RAM\n• O iniciar el programa manualmente"
+  "restart_loop_blocked_msg": ",⚠️ BUCLE INFINITO PREVENIDO\n\napp.exe se reinició {count} veces en {cooldown} segundos.\n\nEl límite de RAM ({limit} MB) es demasiado bajo\n\n✅ Solución:\n• Aumentar el límite de RAM\n• O iniciar el programa manualmente"
   "theme_setting": "Tema",
   "theme_desc": "Elige tu tema de color favorito. El programa se reiniciará después de cambiar el tema."
 }

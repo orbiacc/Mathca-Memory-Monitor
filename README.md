@@ -557,7 +557,7 @@ pip install psutil==5.9.5 customtkinter==5.2.0
   "interval_range_error": "Update interval must be between 0.5-60 seconds!",
   "invalid_number": "Please enter a valid number!",
   "restart_loop_blocked_title": "Auto-Restart Blocked!",
-  "restart_loop_blocked_msg": "app.exe has been restarted {count} times in {cooldown} seconds!\n\nThis may indicate a memory leak or insufficient limit.\n\nCurrent limit: {limit} MB\n\nAuto-restart is now DISABLED.\nTo re-enable, fix the issue and click 'Save & Apply' in Configuration."
+  "restart_loop_blocked_msg": ",app.exe has been restarted {count} times in {cooldown} seconds!\n\nThis may indicate a memory leak or insufficient limit.\n\nCurrent limit: {limit} MB\n\nAuto-restart is now DISABLED.\nTo re-enable, fix the issue and click 'Save & Apply' in Configuration."
 }
 ```
 

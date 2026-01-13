@@ -46,7 +46,7 @@
   "language_setting": "언어",
   "language_desc": "인터페이스 언어 선택",
   "restart_loop_blocked_title": "자동 시작 중지됨",
-  "restart_loop_blocked_msg": "⚠️ 무한 루프 방지됨\n\napp.exe가 {cooldown}초 동안 {count}번 재시작되었습니다.\n\nRAM 제한 ({limit} MB)이 너무 낮습니다\n\n✅ 해결 방법:\n• RAM 제한 증가\n• 또는 수동 실행"
+  "restart_loop_blocked_msg": ",⚠️ 무한 루프 방지됨\n\napp.exe가 {cooldown}초 동안 {count}번 재시작되었습니다.\n\nRAM 제한 ({limit} MB)이 너무 낮습니다\n\n✅ 해결 방법:\n• RAM 제한 증가\n• 또는 수동 실행"
   "theme_setting": "테마",
   "theme_desc": "좋아하는 색상 테마를 선택하세요. 테마 변경 후 프로그램이 다시 시작됩니다."
 }
