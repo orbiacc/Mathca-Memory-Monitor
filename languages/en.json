@@ -47,4 +47,6 @@
   "language_desc": "Select interface language",
   "restart_loop_blocked_title": "Auto-Start Stopped",
   "restart_loop_blocked_msg": "⚠️ INFINITE LOOP PREVENTED!\n\napp.exe has been restarted {count} times in the last {cooldown} seconds.\n\nRAM limit ({limit} MB) is too low for normal operation!\n\n✅ Solution:\n• INCREASE RAM limit from Configuration\n• Or start the program manually"
+  "theme_setting": "Theme",
+  "theme_desc": "Choose your favorite color theme. The program will restart after changing the theme."
 }
