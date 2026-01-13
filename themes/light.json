@@ -1,0 +1,18 @@
+{
+  "name": "Light",
+  "mode": "light",
+  "colors": {
+    "bg_primary": "#ffffff",
+    "bg_secondary": "#f3f4f6",
+    "bg_tertiary": "#e5e7eb",
+    "text_primary": "#1f2937",
+    "text_secondary": "#6b7280",
+    "accent_green": "#059669",
+    "accent_yellow": "#d97706",
+    "accent_red": "#dc2626",
+    "accent_blue": "#2563eb",
+    "accent_purple": "#7c3aed",
+    "button_hover": "#047857",
+    "progress_bg": "#e5e7eb"
+  }
+}
