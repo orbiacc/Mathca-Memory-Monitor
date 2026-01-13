@@ -1,0 +1,18 @@
+{
+  "name": "Monokai",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#272822",
+    "bg_secondary": "#3e3d32",
+    "bg_tertiary": "#49483e",
+    "text_primary": "#f8f8f2",
+    "text_secondary": "#75715e",
+    "accent_green": "#a6e22e",
+    "accent_yellow": "#e6db74",
+    "accent_red": "#f92672",
+    "accent_blue": "#66d9ef",
+    "accent_purple": "#ae81ff",
+    "button_hover": "#a6e22e",
+    "progress_bg": "#49483e"
+  }
+}
