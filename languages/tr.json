@@ -46,7 +46,7 @@
   "language_setting": "Dil",
   "language_desc": "Arayüz dilini seçin",
   "restart_loop_blocked_title": "Otomatik Başlatma Durduruldu",
-  "restart_loop_blocked_msg": "⚠️ SONSUZ DÖNGÜ ENGELLENDI!\n\napp.exe son {cooldown} saniyede {count} kez yeniden başlatıldı.\n\nRAM limiti ({limit} MB) programın normal çalışması için çok düşük!\n\n✅ Çözüm:\n• Konfigürasyondan RAM limitini ARTIRIN\n• Veya programı manuel başlatın"
+  "restart_loop_blocked_msg": "⚠️ SONSUZ DÖNGÜ ENGELLENDI!\n\napp.exe son {cooldown} saniyede {count} kez yeniden başlatıldı.\n\nRAM limiti ({limit} MB) programın normal çalışması için çok düşük!\n\n✅ Çözüm:\n• Konfigürasyondan RAM limitini ARTIRIN\n• Veya programı manuel başlatın",
   "theme_setting": "Tema",
   "theme_desc": "Favori renk temanızı seçin. Tema değiştirildikten sonra program yeniden başlatılacaktır."
 }
