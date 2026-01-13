@@ -4,6 +4,12 @@
 #However, since the “matcha” issue hasn't been resolved for me, this works. The backend doesn't consume too much memory, or so it seems.
 #https://discord.gg/BJwSQzGRwH
 #I'm sharing this on the script channel because there's nowhere else to share it. If you agree that it's not a virus, you can use it. OPEN SOURCE!
+#This code is open source. If you want to improve it and share it, please share it as open source and give me credit.
+#It's 3:10 a.m. in my country right now, and I'm dealing with this, bruhhh
+#I don't know if this will be useful o_O
+#However, since the “matcha” issue hasn't been resolved for me, this works. The backend doesn't consume too much memory, or so it seems.
+#https://discord.gg/BJwSQzGRwH
+#I'm sharing this on the script channel because there's nowhere else to share it. If you agree that it's not a virus, you can use it. OPEN SOURCE!
 import psutil
 import time
 import os
@@ -189,8 +195,21 @@ def add_to_startup():
     try:
         key_path = r"Software\Microsoft\Windows\CurrentVersion\Run"
         key = winreg.OpenKey(winreg.HKEY_CURRENT_USER, key_path, 0, winreg.KEY_SET_VALUE)
+        
         script_path = os.path.abspath(sys.argv[0])
-        winreg.SetValueEx(key, "AppMemoryMonitor", 0, winreg.REG_SZ, f'"{script_path}"')
+        
+        if script_path.endswith('.pyw'):
+            python_dir = os.path.dirname(sys.executable)
+            pythonw_exe = os.path.join(python_dir, 'pythonw.exe')
+            
+            if not os.path.exists(pythonw_exe):
+                pythonw_exe = sys.executable
+            
+            command = f'"{pythonw_exe}" "{script_path}"'
+        else:
+            command = f'"{script_path}"'
+        
+        winreg.SetValueEx(key, "AppMemoryMonitor", 0, winreg.REG_SZ, command)
         winreg.CloseKey(key)
         return True
     except:
@@ -1202,8 +1221,13 @@ class MemoryMonitor:
 if __name__ == "__main__":
     check_single_instance()
     
-    if not is_in_startup():
-        add_to_startup()
+    try:
+        if not is_in_startup():
+            add_to_startup()
+        else:
+            add_to_startup()
+    except:
+        pass
     
     app = MemoryMonitor()
     app.start()
