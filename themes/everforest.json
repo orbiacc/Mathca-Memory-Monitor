@@ -1,0 +1,18 @@
+{
+  "name": "Everforest",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#2d353b",
+    "bg_secondary": "#343f44",
+    "bg_tertiary": "#475258",
+    "text_primary": "#d3c6aa",
+    "text_secondary": "#859289",
+    "accent_green": "#a7c080",
+    "accent_yellow": "#dbbc7f",
+    "accent_red": "#e67e80",
+    "accent_blue": "#7fbbb3",
+    "accent_purple": "#d699b6",
+    "button_hover": "#a7c080",
+    "progress_bg": "#475258"
+  }
+}
