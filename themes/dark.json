@@ -1,0 +1,18 @@
+{
+  "name": "Dark",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#0f172a",
+    "bg_secondary": "#1f2937",
+    "bg_tertiary": "#374151",
+    "text_primary": "#ffffff",
+    "text_secondary": "#9ca3af",
+    "accent_green": "#10b981",
+    "accent_yellow": "#f59e0b",
+    "accent_red": "#ef4444",
+    "accent_blue": "#3b82f6",
+    "accent_purple": "#8b5cf6",
+    "button_hover": "#059669",
+    "progress_bg": "#374151"
+  }
+}
