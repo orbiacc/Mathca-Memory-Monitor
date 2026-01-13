@@ -46,7 +46,7 @@
   "language_setting": "Jazyk",
   "language_desc": "Vyberte jazyk rozhraní",
   "restart_loop_blocked_title": "Automatické spuštění zastaveno",
-  "restart_loop_blocked_msg": ",⚠️ ZABRÁNĚNO NEKONEČNÉ SMYČCE\n\napp.exe byl restartován {count}× během {cooldown} sekund.\n\nLimit RAM ({limit} MB) je příliš nízký\n\n✅ Řešení:\n• Zvýšit limit RAM\n• Nebo spustit program ručně"
+  "restart_loop_blocked_msg": ",⚠️ ZABRÁNĚNO NEKONEČNÉ SMYČCE\n\napp.exe byl restartován {count}× během {cooldown} sekund.\n\nLimit RAM ({limit} MB) je příliš nízký\n\n✅ Řešení:\n• Zvýšit limit RAM\n• Nebo spustit program ručně",
   "theme_setting": "Motiv",
   "theme_desc": "Vyberte své oblíbené barevné téma. Po změně motivu bude program restartován."
 }

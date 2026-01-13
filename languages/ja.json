@@ -46,7 +46,7 @@
   "language_setting": "言語",
   "language_desc": "インターフェース言語を選択",
   "restart_loop_blocked_title": "自動起動が停止されました",
-  "restart_loop_blocked_msg": ",⚠️ 無限ループを防止しました\n\napp.exe は {cooldown} 秒間に {count} 回再起動されました。\n\nRAM制限 ({limit} MB) が低すぎます\n\n✅ 解決策:\n• RAM制限を増やす\n• または手動で起動する"
+  "restart_loop_blocked_msg": ",⚠️ 無限ループを防止しました\n\napp.exe は {cooldown} 秒間に {count} 回再起動されました。\n\nRAM制限 ({limit} MB) が低すぎます\n\n✅ 解決策:\n• RAM制限を増やす\n• または手動で起動する",
   "theme_setting": "テーマ",
   "theme_desc": "お気に入りのカラーテーマを選択してください。テーマ変更後、プログラムが再起動されます。"
 }

@@ -46,7 +46,7 @@
   "language_setting": "语言",
   "language_desc": "选择界面语言",
   "restart_loop_blocked_title": "自动启动已停止",
-  "restart_loop_blocked_msg": ",⚠️ 已阻止无限循环\n\napp.exe 在 {cooldown} 秒内重启了 {count} 次。\n\nRAM限制 ({limit} MB) 过低\n\n✅ 解决方案:\n• 提高RAM限制\n• 或手动启动程序"
+  "restart_loop_blocked_msg": ",⚠️ 已阻止无限循环\n\napp.exe 在 {cooldown} 秒内重启了 {count} 次。\n\nRAM限制 ({limit} MB) 过低\n\n✅ 解决方案:\n• 提高RAM限制\n• 或手动启动程序",
   "theme_setting": "主题",
   "theme_desc": "选择您喜欢的颜色主题。更改主题后程序将重新启动。"
 }

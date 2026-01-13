@@ -46,7 +46,7 @@
   "language_setting": "Langue",
   "language_desc": "Sélectionner la langue de l’interface",
   "restart_loop_blocked_title": "Démarrage automatique arrêté",
-  "restart_loop_blocked_msg": ",⚠️ BOUCLE INFINIE ÉVITÉE !\n\napp.exe a redémarré {count} fois en {cooldown} secondes.\n\nLa limite RAM ({limit} MB) est trop basse !\n\n✅ Solution :\n• Augmenter la limite RAM\n• Ou lancer le programme manuellement"
+  "restart_loop_blocked_msg": ",⚠️ BOUCLE INFINIE ÉVITÉE !\n\napp.exe a redémarré {count} fois en {cooldown} secondes.\n\nLa limite RAM ({limit} MB) est trop basse !\n\n✅ Solution :\n• Augmenter la limite RAM\n• Ou lancer le programme manuellement",
   "theme_setting": "Thème",
   "theme_desc": "Choisissez votre thème de couleur préféré. Le programme redémarrera après avoir changé le thème."
 }

@@ -46,7 +46,7 @@
   "language_setting": "Język",
   "language_desc": "Wybierz język interfejsu",
   "restart_loop_blocked_title": "Autostart zatrzymany",
-  "restart_loop_blocked_msg": ",⚠️ ZAPOBIEGNIĘTO NIESKOŃCZONEJ PĘTLI\n\napp.exe uruchomił się {count} razy w ciągu {cooldown} sekund.\n\nLimit RAM ({limit} MB) jest zbyt niski\n\n✅ Rozwiązanie:\n• Zwiększ limit RAM\n• Lub uruchom program ręcznie"
+  "restart_loop_blocked_msg": ",⚠️ ZAPOBIEGNIĘTO NIESKOŃCZONEJ PĘTLI\n\napp.exe uruchomił się {count} razy w ciągu {cooldown} sekund.\n\nLimit RAM ({limit} MB) jest zbyt niski\n\n✅ Rozwiązanie:\n• Zwiększ limit RAM\n• Lub uruchom program ręcznie",
   "theme_setting": "Motyw",
   "theme_desc": "Wybierz swój ulubiony motyw kolorystyczny. Program zostanie uruchomiony ponownie po zmianie motywu."
 }
