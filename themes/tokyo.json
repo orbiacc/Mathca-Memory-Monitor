@@ -1,0 +1,18 @@
+{
+  "name": "Tokyo Night",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#1a1b26",
+    "bg_secondary": "#24283b",
+    "bg_tertiary": "#414868",
+    "text_primary": "#c0caf5",
+    "text_secondary": "#565f89",
+    "accent_green": "#9ece6a",
+    "accent_yellow": "#e0af68",
+    "accent_red": "#f7768e",
+    "accent_blue": "#7aa2f7",
+    "accent_purple": "#bb9af7",
+    "button_hover": "#7aa2f7",
+    "progress_bg": "#414868"
+  }
+}
