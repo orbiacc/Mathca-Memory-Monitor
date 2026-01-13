@@ -1,0 +1,18 @@
+{
+  "name": "Gruvbox",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#282828",
+    "bg_secondary": "#3c3836",
+    "bg_tertiary": "#504945",
+    "text_primary": "#ebdbb2",
+    "text_secondary": "#a89984",
+    "accent_green": "#b8bb26",
+    "accent_yellow": "#fabd2f",
+    "accent_red": "#fb4934",
+    "accent_blue": "#83a598",
+    "accent_purple": "#d3869b",
+    "button_hover": "#b8bb26",
+    "progress_bg": "#504945"
+  }
+}
