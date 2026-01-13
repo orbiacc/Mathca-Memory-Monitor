@@ -1,0 +1,18 @@
+{
+  "name": "Solarized",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#002b36",
+    "bg_secondary": "#073642",
+    "bg_tertiary": "#586e75",
+    "text_primary": "#fdf6e3",
+    "text_secondary": "#93a1a1",
+    "accent_green": "#859900",
+    "accent_yellow": "#b58900",
+    "accent_red": "#dc322f",
+    "accent_blue": "#268bd2",
+    "accent_purple": "#6c71c4",
+    "button_hover": "#859900",
+    "progress_bg": "#586e75"
+  }
+}
