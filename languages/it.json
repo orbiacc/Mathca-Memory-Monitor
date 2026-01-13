@@ -47,4 +47,6 @@
   "language_desc": "Seleziona la lingua dell’interfaccia",
   "restart_loop_blocked_title": "Avvio automatico interrotto",
   "restart_loop_blocked_msg": "⚠️ CICLO INFINITO EVITATO\n\napp.exe è stato riavviato {count} volte negli ultimi {cooldown} secondi.\n\nIl limite RAM ({limit} MB) è troppo basso\n\n✅ Soluzione:\n• Aumentare il limite RAM\n• Oppure avviare manualmente il programma"
+  "theme_setting": "Tema",
+  "theme_desc": "Scegli il tuo tema di colore preferito. Il programma si riavvierà dopo aver cambiato il tema."
 }
