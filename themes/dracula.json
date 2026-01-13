@@ -1,0 +1,18 @@
+{
+  "name": "Dracula",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#282a36",
+    "bg_secondary": "#44475a",
+    "bg_tertiary": "#6272a4",
+    "text_primary": "#f8f8f2",
+    "text_secondary": "#6272a4",
+    "accent_green": "#50fa7b",
+    "accent_yellow": "#f1fa8c",
+    "accent_red": "#ff5555",
+    "accent_blue": "#8be9fd",
+    "accent_purple": "#bd93f9",
+    "button_hover": "#50fa7b",
+    "progress_bg": "#44475a"
+  }
+}
