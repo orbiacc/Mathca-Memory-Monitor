@@ -1,0 +1,18 @@
+{
+  "name": "One Dark",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#282c34",
+    "bg_secondary": "#2c313c",
+    "bg_tertiary": "#3e4451",
+    "text_primary": "#abb2bf",
+    "text_secondary": "#5c6370",
+    "accent_green": "#98c379",
+    "accent_yellow": "#e5c07b",
+    "accent_red": "#e06c75",
+    "accent_blue": "#61afef",
+    "accent_purple": "#c678dd",
+    "button_hover": "#98c379",
+    "progress_bg": "#3e4451"
+  }
+}
