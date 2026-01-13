@@ -47,4 +47,6 @@
   "language_desc": "Selecteer interface-taal",
   "restart_loop_blocked_title": "Automatische start gestopt",
   "restart_loop_blocked_msg": "⚠️ ONEINDIGE LUS VOORKOMEN\n\napp.exe is {count} keer herstart in {cooldown} seconden.\n\nRAM-limiet ({limit} MB) is te laag\n\n✅ Oplossing:\n• Verhoog RAM-limiet\n• Of start handmatig"
+  "theme_setting": "Thema",
+  "theme_desc": "Kies je favoriete kleurenthema. Het programma zal opnieuw opstarten na het wijzigen van het thema."
 }
