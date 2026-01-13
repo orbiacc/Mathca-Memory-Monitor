@@ -1,0 +1,18 @@
+{
+  "name": "Catppuccin",
+  "mode": "dark",
+  "colors": {
+    "bg_primary": "#1e1e2e",
+    "bg_secondary": "#313244",
+    "bg_tertiary": "#45475a",
+    "text_primary": "#cdd6f4",
+    "text_secondary": "#bac2de",
+    "accent_green": "#a6e3a1",
+    "accent_yellow": "#f9e2af",
+    "accent_red": "#f38ba8",
+    "accent_blue": "#89b4fa",
+    "accent_purple": "#cba6f7",
+    "button_hover": "#89b4fa",
+    "progress_bg": "#45475a"
+  }
+}
